@@ -68,3 +68,9 @@ for (const file of commandFiles) {
   commands[command.name] = command;
   console.log(`Commande chargée : ${command.name}`);
 }
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('----- Unhandled Rejection at -----');
+  console.log(promise);
+  console.log('----- Reason -----');
+  console.log(reason);
+});
